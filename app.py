@@ -3,7 +3,6 @@
 
 import csv
 from pathlib import Path
-from qualifier.fileio import load_csv
 import sys
 import fire
 import questionary
