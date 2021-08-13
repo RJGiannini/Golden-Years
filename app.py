@@ -8,9 +8,9 @@ import sys
 import fire
 import questionary
 
-from qualifier.retire import retirement_plan
-from qualifier.comfort import comfort_buffer
-from qualifier.americanstates import fifty_states
+from data.retire import retirement_plan
+from data.comfort import comfort_buffer
+from data.americanstates import fifty_states
 
 ###### Below are all the code that are for the API#######
 def eth_api():
