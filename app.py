@@ -1,5 +1,4 @@
-#testing github desktop functionality
-#will add detail to app throughout day
+
 
 #testing github desktop functionality
 #will add detail import csv
@@ -8,10 +7,9 @@ from pathlib import Path
 import sys
 import fire
 import questionary
-from pathlib import Path
 
 from qualifier.retire import retirement_plan
-from qualifier.comfort import comfortable_living
+from qualifier.comfort import comfort_buffer
 from qualifier.americanstates import fifty_states
 
 
