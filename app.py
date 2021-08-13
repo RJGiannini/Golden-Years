@@ -1,6 +1,8 @@
 #testing github desktop functionality
 #will add detail to app throughout day
 
+#testing github desktop functionality
+#will add detail import csv
 import csv
 from pathlib import Path
 import sys
@@ -9,47 +11,59 @@ import questionary
 from pathlib import Path
 
 from qualifier.retire import retirement_plan
-from qualifier.comfort import comfort_buffer
+from qualifier.comfort import comfortable_living
+from qualifier.americanstates import fifty_states
+
 
 #write a code that will prompt the user to answer the questions "Where do you plan to live and how much are you planning to save by 65"
+def prompting_user_state():
+    """ Prompt user to choose from a list of fifty states to get started.
+    
+        Return: "great, this how much you need to live comfortably in (State)____($x)"""
+    
+    prompt_fifty_states = questionary.select("Select a state to get started",choices=fifty_states).ask()
+   
+    return "Great, this how much you need to live comfortably in " + prompt_fifty_states + " $" + comfortability_cost(prompt_fifty_states)
 
+def comfortability_cost(comfort_state):
+    """Display comfortability per state"""
+    stateDic = {}
+    with open("./Resources/us_retirement_data.csv", 'r') as csvfile:
+        csvreader = csv.reader(csvfile)
+        for row in csvreader:
+            stateDic[row[0]] = row[3]
+    return stateDic[comfort_state]
 
-def save_csv(csvpath,state_plan ):
-
-    with open(csvpath, 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(["State","Cost of Living","Comfort Buffer","Comfortable Retirement"])
-        for row in state_plan:
-            csvwriter.writerow(row)
-
-
-def csv_prompt():
-    """Ask for the file path to the latest banking data and load the CSV file.
-
-    Returns:
-        The US retirement data from the data rate sheet CSV file.
+def investment_choice():
+    """ Ask user if they plan to invest to increase savings.
+    
+        Return either: yes or no. if no, return to the beginning, if yes, continue with choices.
     """
-
-    csvpath = questionary.text("Enter a file path to a rate-sheet (.csv):").ask()
-    csvpath = Path(csvpath)
-    if not csvpath.exists():
-        sys.exit(f"Oops! Can't find this path: {csvpath}")
-
-    return load_csv(csvpath)
-
-
-def get_applicant_info():
-    """Prompt dialog to get the applicant's financial information.
-
-    Returns:
-        Returns the applicant's financial information.
-    """
-
-    state = questionary.text("Which State do you want to live in?").ask()
-    savings = questionary.text("How much do you plan to save by 65?").ask()
+    investment_q = questionary.confirm("Do you plan to invest to increase your savings?").ask()
+    if investment_q:
+        data = investment_stock_crypto()
+        print (data)
+    else:
+        run()
+        
 
 
-    State = str(state)
-    savings = float(savings)
-    return State, savings
+def investment_stock_crypto():
+    """Prompt user to start with crypto or stocks to view (first).
+    
+        Return either crypto or stock"""
+
+    stock_crypto = questionary.select("Select either 'Stock' or 'Crypto' to get started",choices=["Crypto","Stocks"]).ask()
+    return "Sounds like an amazing choice, you've selected "+ stock_crypto
+    
+
+
+
+def run():
+    #load CSV file
+    data = prompting_user_state()
+    print (data)
+    data = investment_choice()
+if __name__=="__main__":
+    fire.Fire(run)
 
