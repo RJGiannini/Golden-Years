@@ -12,6 +12,36 @@ from qualifier.retire import retirement_plan
 from qualifier.comfort import comfort_buffer
 from qualifier.americanstates import fifty_states
 
+###### Below are all the code that are for the API#######
+def eth_api():
+    eth_crypto = print("Code here")
+    return eth_crypto
+
+def btc_api():
+    btc_crypto = print("Code here")
+    return btc_crypto
+
+def fb_stock():
+    fb = print("Code for API here")
+    return fb
+
+def amazon_stock():
+    amazon = print("Code for API here")
+    return amazon
+
+def apple_stock():
+    apple = print("Code for API here")
+    return apple
+
+def netflix_stock():
+    netflix = print("Code for API here")
+    return netflix
+
+def google_stock():
+    google = print("Code for API here")
+    return google
+
+###### ------ ########
 
 #write a code that will prompt the user to answer the questions "Where do you plan to live and how much are you planning to save by 65"
 def prompting_user_state():
@@ -39,8 +69,7 @@ def investment_choice():
     """
     investment_q = questionary.confirm("Do you plan to invest to increase your savings?").ask()
     if investment_q:
-        data = investment_stock_crypto()
-        print (data)
+        investment_stock_crypto()
     else:
         run()
         
@@ -52,8 +81,37 @@ def investment_stock_crypto():
         Return either crypto or stock"""
 
     stock_crypto = questionary.select("Select either 'Stock' or 'Crypto' to get started",choices=["Crypto","Stocks"]).ask()
-    return "Sounds like an amazing choice, you've selected "+ stock_crypto
+    if stock_crypto == "Crypto":
+        crypto_api()
+    else:
+        stock_api()
     
+def crypto_api():
+    """This is a segway into crpyto API and Monte Carlo
+        Return information on crypto"""
+    crypto_btc_eth = questionary.select ("Crypto is a great to start saving. Select a crypto to continue:",choices =["ETH","BTC"]).ask()
+    if crypto_btc_eth == "ETH":
+        eth_api()
+    else:
+        btc_api()
+
+    
+def stock_api():
+    """This is a segway into the Monte Carlo/API.
+        Return: Monte Carlo/API"""
+
+    stock_faang = questionary.select("Please select a company to begin:",choices= ["Facebook","Amazon","Apple","Netflix","Google"]).ask()
+    if stock_faang == "Facebook":
+        fb_stock()
+    elif stock_faang == "Amazon":
+        amazon_stock()
+    elif stock_faang == "Apple":
+        apple_stock()
+    elif stock_faang == "Netflix":
+        netflix_stock()
+    else:
+        google_stock()
+
 
 
 
