@@ -3,7 +3,7 @@ def retirement_plan (estimated_savings, state_costs):
     
         args: 
             estimated_savings(float): The customer's expected amount of savings.
-            state_cost: The csv/list of available state of where to the customer want to live
+            state_cost: The list of available states of where the users wants to live 
     
     QUESTIONS TO ANSWER:
         "WHERE DO YOU WANT TO LIVE/ HOW MUCH DO YOU PLAN OF SAVING."

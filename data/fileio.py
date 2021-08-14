@@ -1,5 +1,5 @@
-import csv
 
+import csv
 
 def load_csv(csvpath):
     """Reads the CSV file from path provided.

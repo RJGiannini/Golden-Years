@@ -1,2 +1,0 @@
-This is where api keys will go if we use them? 
-do we need a separate file for api keys if we have dotenv?
