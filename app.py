@@ -13,8 +13,9 @@ from data.comfort import comfort_buffer
 from data.americanstates import fifty_states
 
 ###### Below are all the code that are for the API#######
+# Call current market price for user 
 def eth_api():
-    eth_crypto = print("Code here")
+    eth_crypto = print("")
     return eth_crypto
 
 def btc_api():
@@ -80,7 +81,7 @@ def investment_stock_crypto():
     
         Return either crypto or stock"""
 
-    stock_crypto = questionary.select("Select either 'Stock' or 'Crypto' to get started",choices=["Crypto","Stocks"]).ask()
+    stock_crypto = questionary.select("Select either 'Stock', 'Crypto', or both to get started",choices=["Crypto","Stocks", "Stocks and Crypto"]).ask()
     if stock_crypto == "Crypto":
         crypto_api()
     else:
@@ -111,9 +112,6 @@ def stock_api():
         netflix_stock()
     else:
         google_stock()
-
-
-
 
 def run():
     #load CSV file
