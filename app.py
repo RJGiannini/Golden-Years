@@ -48,31 +48,25 @@ def google_stock():
 
 #write a code that will prompt the user to answer the questions "Where do you plan to live and how much are you planning to save by 65"
 def prompting_user_state():
-    """ Prompt user to choose from a list of fifty states to get started.
+    """ Prompt user to choose from a list of fifty states where they currently live to get started.
     
-        Return: "great, this how much you need to live comfortably in (State)____($x)"""
+        Return: "Great, this how much you need to live comfortably in this (State)____($x)"""
     
-    prompt_fifty_states = questionary.select("Select a state to get started",choices=fifty_states).ask()
+    prompt_fifty_states = questionary.select("Select the state you live in to get started",choices=fifty_states).ask()
    
     return "Great, this how much you need to live comfortably in " + prompt_fifty_states + " $" + comfortability_cost(prompt_fifty_states)
 
+def user_amount_savings():  
+    """Prompt to input current savings amount"""
+    savings_account = []  
+    input_savings_account = True  
 
-def user_retire_age():  
-    """Prompt user to answer when they plan to retire"""
-    age_list = []  
-    input_age = True  
-
-    while input_age:
-        age = int(input("Please enter the age at which you retire(or 0 to quit): "))
-        if age > 0:
-            print ("Great! let's get you started in increasing your savings!")
+    while input_savings_account:
+        savings = int(input("Please enter the amount you current have in your savings account."))
+        if savings > 0:
+            print ("Great! We will suggest some investments that have a return over time.")
         else:
-            break
-
-
-if __name__ == '__main__':   
-    print(user_retire_age())
-    
+            print ("Sorry, we need a valid amount for your savings account.")
 
 def comfortability_cost(comfort_state):
     """Display comfortability per state"""
@@ -92,6 +86,7 @@ def investment_choice():
     if investment_q:
         investment_stock_crypto()
     else:
+<<<<<<< Updated upstream
         pose_investment()
         
 
@@ -105,6 +100,9 @@ def pose_investment():
         print ("Thank you for your time.Goodbye")
         
 
+=======
+        run()
+>>>>>>> Stashed changes
 
 def investment_stock_crypto():
     """Prompt user to start with crypto or stocks to view (first).
@@ -146,7 +144,6 @@ def stock_api():
 def run():
     #load CSV file
     data = prompting_user_state()
-    data = user_retire_age()
     print (data)
     data = investment_choice()
 if __name__=="__main__":
