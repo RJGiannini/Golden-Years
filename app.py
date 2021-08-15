@@ -7,10 +7,12 @@ from pathlib import Path
 import sys
 import fire
 import questionary
+from datetime import datetime
 
 from data.retire import retirement_plan
 from data.comfort import comfort_buffer
 from data.americanstates import fifty_states
+
 
 ###### Below are all the code that are for the API#######
 # Call current market price for user 
@@ -53,6 +55,24 @@ def prompting_user_state():
     prompt_fifty_states = questionary.select("Select a state to get started",choices=fifty_states).ask()
    
     return "Great, this how much you need to live comfortably in " + prompt_fifty_states + " $" + comfortability_cost(prompt_fifty_states)
+
+
+def user_retire_age():  
+    """Prompt user to answer when they plan to retire"""
+    age_list = []  
+    input_age = True  
+
+    while input_age:
+        age = int(input("Please enter the age at which you retire(or 0 to quit): "))
+        if age > 0:
+            print ("Great! let's get you started in increasing your savings!")
+        else:
+            break
+
+
+if __name__ == '__main__':   
+    print(user_retire_age())
+    
 
 def comfortability_cost(comfort_state):
     """Display comfortability per state"""
@@ -116,6 +136,7 @@ def stock_api():
 def run():
     #load CSV file
     data = prompting_user_state()
+    data = user_retire_age()
     print (data)
     data = investment_choice()
 if __name__=="__main__":
