@@ -1,7 +1,5 @@
 
-
-#testing github desktop functionality
-#will add detail import csv
+#imports
 import csv
 from pathlib import Path
 import sys
