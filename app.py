@@ -56,17 +56,6 @@ def prompting_user_state():
    
     return "Great, this how much you need to live comfortably in " + prompt_fifty_states + " $" + comfortability_cost(prompt_fifty_states)
 
-def user_amount_savings():  
-    """Prompt to input current savings amount"""
-    savings_account = []  
-    input_savings_account = True  
-
-    while input_savings_account:
-        savings = int(input("Please enter the amount you current have in your savings account."))
-        if savings > 0:
-            print ("Great! We will suggest some investments that have a return over time.")
-        else:
-            print ("Sorry, we need a valid amount for your savings account.")
 
 def comfortability_cost(comfort_state):
     """Display comfortability per state"""
@@ -86,23 +75,7 @@ def investment_choice():
     if investment_q:
         investment_stock_crypto()
     else:
-<<<<<<< Updated upstream
-        pose_investment()
-        
-
-
-
-def pose_investment():
-    push_investment = questionary.confirm("Would you like to view investment options anyway?").ask()
-    if push_investment:
-        investment_stock_crypto()
-    else: 
-        print ("Thank you for your time.Goodbye")
-        
-
-=======
         run()
->>>>>>> Stashed changes
 
 def investment_stock_crypto():
     """Prompt user to start with crypto or stocks to view (first).
