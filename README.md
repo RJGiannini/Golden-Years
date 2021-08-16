@@ -8,7 +8,7 @@ Golden Years aims to make preparing for retirement simple and easy. First, the a
 
 This project leverages python 3.7 with the following:
 
-* [alpaca-trade-api](https://pypi.org/project/alpaca-trade-api/) - alpaca-trade-api-python is a python library for the Alpaca Commission Free Trading API. It allows rapid trading algo development easily, with support for both REST and streaming data interfaces.
+* [alpaca-trade-api](https://pypi.org/project/alpaca-trade-api/) - Python library for Alpaca Commission Free Trading API.
 
 * [anvil.server](https://anvil.works/docs/server) - Complete server-side Python environment. 
 
