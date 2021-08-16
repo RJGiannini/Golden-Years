@@ -303,15 +303,15 @@ python app.py
 
 Below you will find screenshot demonstrations.
 
-![Screenshot Name](Images/screenshot_name.png)
+![Retirement Confidence Rating](Images/retirement_confidence_rating.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![Popular Retirement Accounts Pie Chart](Images/popular_retirement_accounts_pie_chart.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![MapBox API Comfortable Retirement](Images/mapbox_api_comfortable_retirement.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![Monte Carlo Cumulative Portfolio Returns](Images/mc_cumulative_portfolio_returns.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![Monte Carlo Cumulative Portfolio Distributions](Images/mc_final_cumulative_returns_distribution.png)
 
 ![Screenshot Name](Images/screenshot_name.png)
 
