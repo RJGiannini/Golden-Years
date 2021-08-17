@@ -73,7 +73,17 @@ def investment_choice():
     if investment_q:
         investment_stock_crypto()
     else:
-        run()
+        pose_investment()
+        
+
+
+def pose_investment():
+    push_investment = questionary.confirm("Would you like to view investment options anyway?").ask()
+    if push_investment:
+        investment_stock_crypto()
+    else: 
+        print ("Thank you for your time.Goodbye")
+
 
 def investment_stock_crypto():
     """Prompt user to start with crypto or stocks to view (first).
