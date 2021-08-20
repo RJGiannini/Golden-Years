@@ -313,11 +313,13 @@ Below you will find screenshot demonstrations.
 
 ![Monte Carlo Cumulative Portfolio Distributions](Images/mc_final_cumulative_returns_distribution.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![Savings Account Calculation](Images/savings_account_calculation.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![Crypto Simulation](Images/crypto_simulation.png)
 
-![Screenshot Name](Images/screenshot_name.png)
+![FAANG Simulation](Images/FAANG_simulation.png)
+
+![Funds Simulation](Images/Funds_simulation.png)
 
 ---
 
