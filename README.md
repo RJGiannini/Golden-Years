@@ -322,7 +322,8 @@ Below you will find screenshot demonstrations.
 
 ![Funds Simulation](Images/Funds_simulation.png)
 
-Also, you can access the Voila dashboard at this link (http://localhost:8888/voila/render/golden_years_final.ipynb). 
+##Also, you can access the Voila dashboard at this link (http://localhost:8888/voila/render/golden_years_final.ipynb). 
+##If there are any issues accessing the link, please go to golden_years_final.ipynb and click on voila without running code. If you run code, you must first input savings and principle data before voila will load. 
 ---
 
 ## Contributors
