@@ -11,4 +11,4 @@ alpaca_trade_api
 datetime 
 dotenv 
 MCForecastTools 
-%matplotlib inline
+Matplotlib 
