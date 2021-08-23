@@ -295,11 +295,12 @@ print(f"The closing price of Google is ${goog_close_price:,.2f}")
 
 ## Usage
 
-To use the Golden Years application simply clone the repository and run the **app.py** with:
+To use the Golden Years application simply clone the repository and run the **user_input.py** with:
 
 ```python
 python app.py
 ```
+For the the retirement confidence data and financial simulations, please run golden_years_final in jupyter notebook. 
 
 Below you will find screenshot demonstrations.
 
@@ -321,6 +322,7 @@ Below you will find screenshot demonstrations.
 
 ![Funds Simulation](Images/Funds_simulation.png)
 
+Also, you can access the Voila dashboard at this link (http://localhost:8888/voila/render/golden_years_final.ipynb). 
 ---
 
 ## Contributors
